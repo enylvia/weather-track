@@ -15,6 +15,6 @@
 
 ### Images
      Image | Index | Home
-    - ![image](https://user-images.githubusercontent.com/87221250/157538155-034acf35-b8a5-4e51-8a4d-d2530dabb725.png)
+![image](https://user-images.githubusercontent.com/87221250/157538155-034acf35-b8a5-4e51-8a4d-d2530dabb725.png)
     Image | Proses Input | Proses Output
-    - ![image](https://user-images.githubusercontent.com/87221250/157538549-d577086d-343b-4e65-80d9-3416e1201300.png)
+![image](https://user-images.githubusercontent.com/87221250/157538549-d577086d-343b-4e65-80d9-3416e1201300.png)
