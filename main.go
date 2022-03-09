@@ -1,16 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-contrib/multitemplate"
 	"github.com/gin-gonic/gin"
 	"path/filepath"
 	"weathertrack/handler"
 )
 
-func hello(c *gin.Context) {
-	fmt.Fprintf(c.Writer, "<a href='/weather'>Click Here</a>")
-}
 func main() {
 	router := gin.Default()
 	webHandler := handler.NewWeatherHandler()
@@ -22,10 +18,9 @@ func main() {
 	router.Static("/img", "./web/assets/img")
 	router.Static("/js", "./web/assets/js")
 
-	router.GET("/weather", webHandler.Index)
+	router.GET("/", webHandler.Index)
 	router.POST("/weather", webHandler.GetWeather)
 	router.GET("/api/weather", webHandler.GetWeatherAPI)
-	router.GET("/", hello)
 
 	router.Run(":8080")
 
