@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<link rel="icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png">
+		<title>Forecast Weather</title>
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<div class="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="/weather" class="branding">
+						<img src="/img/logo.png" alt="" class="logo">
+						<div class="logo-type">
+							<h1 class="site-title">EnWadit</h1>
+							<small class="site-description">Forecasting</small>
+						</div>
+					</a>
+
+					<!-- Default snippet for navigation -->
+					<div class="main-navigation">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item current-menu-item"><a href="/weather">Home</a></li>
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+
+					<div class="mobile-navigation"></div>
+
+				</div>
+			</div> <!-- .site-header -->
+
+			<div class="hero" data-bg-image="/img/banners.png">
+				<div class="container">
+					<form action="/weather" method="post" class="find-location">
+						<input type="text" name="city" placeholder="Check your location...">
+						<input type="submit" value="Check">
+					</form>
+
+				</div>
+			</div>
+			{{template "content" .}}
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<div class="social-links">
+								<a href="https://www.facebook.com/dit404/"><i class="fa fa-facebook"></i></a>
+								<a href="https://twitter.com/additya_pp"><i class="fa fa-twitter"></i></a>
+								<a href="https://www.instagram.com/enad.it"><i class="fa fa-instagram"></i></a>
+								<a href="https://github.com/enylvia"><i class="fa fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+					<p class="colophon">Copyright 2014 addityap. Designed by Themezy. All rights reserved</p>
+				</div>
+			</footer> <!-- .site-footer -->
+		</div>
+		
+		<script src="/js/jquery-1.11.1.min.js"></script>
+		<script src="/js/plugins.js"></script>
+		<script src="/js/app.js"></script>
+		
+	</body>
+
+</html>

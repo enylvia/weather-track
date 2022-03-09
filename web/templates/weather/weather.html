@@ -1,0 +1,56 @@
+{{define "content"}}
+<div class="forecast-table">
+    <div class="container">
+        <div class="forecast-container">
+            <div class="today forecast">
+                <div class="forecast-header">
+                    <div class="day">{{ .data.City.Name}}</div>
+                    <div class="date">{{ .data.City.Country}}</div>
+                </div> <!-- .forecast-header -->
+                <div class="forecast-content">
+                    <div class="location">{{ .data.City.Name}}</div>
+                        {{ if eq (index .data.City.Country) "" }}
+                        <h3 style="text-align: center">City Not Found</h3>
+                        {{ else }}
+                    <div class="degree">
+                        <div class="num">{{(index .data.City.Weather 1).Feels}}<sup>o</sup>C</div>
+                        <div class="forecast-icon">
+                            <img src="img/icons/icon-1.svg" alt="" width=90>
+                        </div>
+                    </div>
+                    <span><img src="img/icon-umberella.png" alt="">{{(index .data.City.Weather 1).Main}}</span>
+                    <span><img src="img/icon-wind.png" alt="">{{(index .data.City.Weather 1).Wind}} Km/h</span>
+                    <span><img src="img/icon-compass.png" alt="">{{(index .data.City.Weather 1).Humidity}} %</span>
+                </div>
+            </div>
+            {{ range .data.City.Weather }}
+            <div class="forecast">
+                <div class="forecast-header">
+                    <div class="day">{{ .Time }}</div>
+                </div> <!-- .forecast-header -->
+                <div class="forecast-content">
+                    <div class="forecast-icon">
+                        {{ if eq .Icon "10d" }}
+                        <img src="img/icons/icon-6.svg" alt="" width=48>
+                        {{ else if eq .Icon "10n" }}
+                        <img src="img/icons/icon-6.svg" alt="" width=48>
+                        {{ else if eq .Icon "04n" }}
+                        <img src="img/icons/icon-2.svg" alt="" width=48>
+                        {{ else if eq .Icon "04d" }}
+                        <img src="img/icons/icon-4.svg" alt="" width=48>
+                        {{ else if eq .Icon "01d" }}
+                        <img src="img/icons/icon-1.svg" alt="" width=48>
+                        {{ else }}
+                        <img src="img/icons/icon-3.svg" alt="" width=48>
+                        {{ end }}
+                    </div>
+                    <div class="degree">{{ .Temp }}<sup>o</sup>C</div>
+                    <small>{{ .Description }}<sup></sup></small>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ end }}
